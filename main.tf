@@ -23,8 +23,15 @@ module "statement-app" {
     }
   }
 
-
-
+  use_Bastion = false
+  bastion_inbound_rules = {
+    ssh-access = {
+      from_port   = 22
+      ip_protocol = "tcp"
+      cidr_ipv4   = "61.21.197.51/32"
+      description = "ssh management"
+    }
+  }
 
 }
 
