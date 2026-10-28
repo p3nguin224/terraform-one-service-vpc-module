@@ -6,7 +6,7 @@ module "statement-app" {
   vpc_cidr        = "10.0.0.0/16"
   public_subnets  = ["10.0.1.0/24", "10.0.2.0/24"]
   private_subnets = ["10.0.100.0/24", "10.0.200.0/24"]
-  instance_type   = "t3.nano"
+  instance_type   = "t3.micro"
   tags = {
     "Environment" = "dev"
     "createdBy"   = "Terraform"
@@ -17,7 +17,7 @@ module "statement-app" {
   userdata_filename = "test-userdata.sh"
   webapp_inbound_rules = {
     web-access = {
-      from_port   = 9093
+      from_port   = 9095
       ip_protocol = "tcp"
       cidr_ipv4   = "0.0.0.0/0"
       description = "HTTPS from internal"
