@@ -23,7 +23,7 @@ module "statement-app" {
     }
   }
 
-  use_Bastion = false
+  use_Bastion = true
   bastion_inbound_rules = {
     ssh-access = {
       from_port   = 22

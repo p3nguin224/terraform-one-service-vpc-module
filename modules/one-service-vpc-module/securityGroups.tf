@@ -16,7 +16,7 @@ module "web-app-security-group" {
         referenced_security_group_id = module.bastion-security-group.id
         description                  = "SSH access from bastion host"
       }
-  }) : var.bastion_inbound_rules
+  }) : var.webapp_inbound_rules
   #  ingress_rules = var.webapp_inbound_rules
 
   tags = var.tags
