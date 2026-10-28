@@ -7,8 +7,8 @@ module "web-app-security-group" {
 
   egress_rules = var.webapp_outbound_rules
 
-  # set bastion rule auto to inbound if Bastion is true
-  ingress_rules = var.use_Bastion ? merge(var.bastion_inbound_rules,
+  # add ssh inbound from bastion host if Bastion is created
+  ingress_rules = var.use_Bastion ? merge(var.webapp_inbound_rules,
     {
       bastion-ssh = {
         from_port                    = 22
@@ -17,7 +17,6 @@ module "web-app-security-group" {
         description                  = "SSH access from bastion host"
       }
   }) : var.webapp_inbound_rules
-  #  ingress_rules = var.webapp_inbound_rules
 
   tags = var.tags
 }
