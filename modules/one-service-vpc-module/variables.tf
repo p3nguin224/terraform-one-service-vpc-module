@@ -87,7 +87,7 @@ variable "webapp_inbound_rules" {
 }
 
 
-## Bastion
+
 variable "use_Bastion" {
   description = "create Bastion Host in Public Subnet or not"
   type        = bool
@@ -114,6 +114,7 @@ variable "bastion_outbound_rules" {
     }
   }
 }
+
 
 variable "bastion_inbound_rules" {
   description = "Map of Objects for Outbound rules."
