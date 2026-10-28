@@ -18,7 +18,7 @@ module "statement-app" {
     web-access = {
       from_port   = 9093
       ip_protocol = "tcp"
-      cidr_ipv4   = "10.0.0.0/16"
+      cidr_ipv4   = "0.0.0.0/0"
       description = "HTTPS from internal"
     }
   }
